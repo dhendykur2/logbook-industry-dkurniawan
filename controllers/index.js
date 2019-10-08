@@ -19,7 +19,6 @@ module.exports.login = async (req, reply) => {
     const $ = cheerio.load(response.body);
     const formInput = $('form').serializeArray();
     console.log('Get Form Input Name');
-    console.log('Get Form input');
     await formInput.map((obj) => {
       if (obj.name !== '_token') {
         obj.name === 'username' ?
